@@ -1,0 +1,90 @@
+
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.png" alt="..." /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars ms-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
+                <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Photos
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#album1">Year 1 Album</a>
+                        <a class="dropdown-item" href="#album2">Year 2 Album</a>
+                        <a class="dropdown-item" href="#album3">Year 3 Album</a>
+                        <!-- add more album links here as needed -->
+                    </div>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Year 1 Album -->
+<section class="page-section" id="album1">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Year 1 Album</h2>
+        </div>
+        <div class="album">
+            <!-- Add your album photos here -->
+        </div>
+    </div>
+</section>
+
+<!-- Year 2 Album -->
+<section class="page-section" id="album2">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Year 2 Album</h2>
+        </div>
+        <div class="album">
+            <!-- Add your album photos here -->
+        </div>
+    </div>
+</section>
+
+<!-- Year 3 Album -->
+<section class="page-section" id="album3">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Year 3 Album</h2>
+        </div>
+        <div class="album">
+            <!-- Add your album photos here -->
+        </div>
+    </div>
+</section>
+
+
+<!-- JS to hide/show album sections on menu item click -->
+<script>
+    var albumLinks = document.querySelectorAll('.dropdown-menu a');
+    var albums = document.querySelectorAll('.page-section');
+
+    for (var i = 0; i < albumLinks.length; i++) {
+        albumLinks[i].addEventListener('click', function(e) {
+            e.preventDefault();
+
+            // Hide all albums
+            for (var j = 0; j < albums.length; j++) {
+                albums[j].style.display = 'none';
+            }
+
+            // Show the album that was clicked
+            var albumId = this.getAttribute('href');
+            var album = document.querySelector(albumId);
+            album.style.display = 'block';
+        });
+    }
+</script>
